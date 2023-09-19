@@ -1,0 +1,20 @@
+h1 {
+  color: crimson;
+  span {
+    font-size: 50px;
+  }
+}
+
+.alert {
+  padding: 5px;
+  background-color: aqua;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.success {
+  padding: 5px;
+  background-color: #d2dc14;
+  border: 1px solid black;
+  margin: 5px;
+}
