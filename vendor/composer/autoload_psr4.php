@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Bankas\\Db\\' => array($baseDir . '/src/app'),
     'App\\Db\\' => array($baseDir . '/src/app/db'),
+    'App\\Auth\\' => array($baseDir . '/src/app/auth'),
 );

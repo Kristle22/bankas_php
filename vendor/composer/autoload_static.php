@@ -14,6 +14,7 @@ class ComposerStaticInit2f6cf2a0465b1ce4e082e13942bd3197
         'A' => 
         array (
             'App\\Db\\' => 7,
+            'App\\Auth\\' => 9,
         ),
     );
 
@@ -25,6 +26,10 @@ class ComposerStaticInit2f6cf2a0465b1ce4e082e13942bd3197
         'App\\Db\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/app/db',
+        ),
+        'App\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/app/auth',
         ),
     );
 

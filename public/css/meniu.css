@@ -1,0 +1,84 @@
+ul.meniu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0 0 0 -8px;
+  padding: 1.6%;
+  overflow: hidden;
+  background: #ddf3fd;
+  list-style-type: none;
+  display: flex;
+}
+.meniu li,
+li.login,
+li form.logout {
+  padding: 5px;
+  margin: 0;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  width: 100%;
+  min-height: 100%;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.meniu li:hover,
+.logout:hover,
+.logout button:hover,
+.login button:hover {
+  background-color: #ccc;
+}
+a,
+.meniu button {
+  color: #333;
+  text-decoration: none;
+}
+.logout button {
+  border: none;
+  background-color: #ddd;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+li.active {
+  background-color: #ccc;
+}
+li.active a {
+  font-weight: bold;
+  color: crimson;
+}
+
+/* LOGIN */
+.login {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  max-width: 380px;
+  justify-content: end;
+  padding: 50px;
+  border-radius: 3px;
+  border: 2px solid #18618e;
+  background: #18618eaa;
+}
+.login * {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.login label {
+  width: 80px;
+  align-items: start;
+}
+.login input {
+  height: 33px;
+  width: 250px;
+  border-radius: 3px;
+  border: none;
+}
+.login small {
+  color: #ddd;
+}

@@ -1,20 +1,301 @@
 h1 {
   color: crimson;
-  span {
-    font-size: 50px;
-  }
 }
 
 .alert {
-  padding: 5px;
-  background-color: aqua;
-  border: 1px solid black;
-  margin: 5px;
+  font-size: 20px;
+  background-color: #eeddaaee;
+  margin: 3px;
+  padding: 15px;
 }
 
 .success {
+  font-size: 20px;
+  background-color: #aaddaaee;
+  margin: 3px;
+  padding: 15px;
+}
+
+.danger {
+  font-size: 20px;
+  background: #ff7777ee;
+  margin-top: 3px;
+  padding: 15px;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MENIU */
+ul.meniu {
+  margin-left: -10px;
+  list-style-type: none;
+  display: flex;
+}
+.meniu li,
+li.login,
+li form.logout {
   padding: 5px;
-  background-color: #d2dc14;
-  border: 1px solid black;
-  margin: 5px;
+  margin: 0;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  width: 100%;
+  min-height: 100%;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meniu li:hover,
+.logout:hover,
+.logout button:hover,
+.login button:hover {
+  background-color: #ccc;
+}
+a,
+.meniu button {
+  color: #333;
+  text-decoration: none;
+}
+.logout button {
+  border: none;
+  background-color: #ddd;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+li.active {
+  background-color: #ccc;
+}
+li.active a {
+  font-weight: bold;
+  color: crimson;
+}
+
+/* sarasas */
+.account {
+  background: linear-gradient(rgba(27, 43, 91, 0.5), rgba(67, 101, 124, 0.5)),
+    url('../img/banking_background.jpg') center/cover;
+  width: 100%;
+  height: 100vh;
+}
+.title {
+  text-align: center;
+}
+h2.title {
+  font-size: 30px;
+  margin-top: 100px;
+}
+.title h1 {
+  font-size: 50px;
+}
+.title div {
+  display: flex;
+  gap: 100px;
+}
+.title.info {
+  margin: 0 auto;
+  padding: 5px 10px 3px 10px;
+  width: fit-content;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+h1 span {
+  font-size: 20px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.row li {
+  padding: 5px 10px;
+  word-wrap: break-word;
+  font-size: 16px;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0px;
+  padding: 0 10px;
+}
+ul.row {
+  font-weight: bold;
+  width: 65%;
+}
+ul.cap {
+  font-size: 18px;
+  min-width: 70%;
+}
+ul.row * {
+  min-width: 17%;
+}
+ul.cap * {
+  width: 17%;
+}
+input:focus,
+select:focus {
+  outline: none;
+  background: #ddf3fdf5;
+}
+select {
+  width: 250px;
+  height: 33px;
+  border: none;
+  border-radius: 3px;
+}
+.new.convert input {
+  width: 230px;
+  height: 20px;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 20px 40px 0 0;
+}
+.links * {
+  border: none;
+  color: #555;
+  padding: 5px 6px;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.links *:hover {
+  background: #ccc;
+  color: crimson;
+}
+li.active {
+  background-color: #ccc;
+}
+li.active a {
+  font-weight: bold;
+  color: crimson;
+}
+
+/* nauja saskaita */
+form.new {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 30px;
+}
+label {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #7b4343;
+}
+.new div {
+  min-height: 50px;
+  max-height: 50px;
+}
+.new label {
+  display: inline-block;
+  width: 120px;
+}
+.new input {
+  width: 295px;
+  padding: 8px;
+  border: #d3cfcf solid 1px;
+  border-radius: 3px;
+}
+
+.new button,
+.login button {
+  border: none;
+  color: #555;
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin: 15px 0 0 250px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sum {
+  margin-left: 125px;
+}
+.sum span {
+  display: block;
+  font-size: 14px;
+  margin: 5px 0 0 100px;
+}
+button.transfer {
+  margin-right: -70px;
+}
+.error {
+  margin: -5px 0 0 120px;
+  font-weight: bold;
+  color: red;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 3px;
+}
+/* .success,
+.warning,
+.danger {
+  position: absolute;
+  z-index: 999;
+  top: 20px;
+  right: 20px;
+  color: crimson;
+  padding: 15px 15px;
+  max-width: 200px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.success {
+  background: #aaddaaee;
+}
+.warning {
+  background: #eeddaaee;
+}
+.danger {
+  background: #ff7777ee;
+  color: #fff;
+} */
+
+/* LOGIN */
+.login {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  max-width: 380px;
+  justify-content: end;
+  padding: 50px;
+  border-radius: 3px;
+  border: 2px solid #d3d9dc;
+}
+.login * {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.login label {
+  width: 80px;
+  align-items: start;
+}
+.login input {
+  height: 33px;
+  width: 250px;
+  border-radius: 3px;
+  border: #d3cfcf solid 1px;
+}
+.login small {
+  color: #8e8c8c;
 }

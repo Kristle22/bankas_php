@@ -4,19 +4,19 @@ namespace App\Db;
 
 interface DataBase
 {
-    function create(array $uztvankaData) : void;
+    function create(array $data) : void;
 
 
     function update(int
- $uztvankaId, array $uztvankaData) : void;
+ $dataId, array $data) : void;
 
 
     function delete(int
- $uztvankaId) : void;
+ $dataId) : void;
 
 
     function show(int
- $uztvankaId) : array;
+ $dataId) : array;
     
     function showAll() : array;
 }

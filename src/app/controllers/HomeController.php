@@ -2,12 +2,12 @@
 namespace Bankas\Db\Controllers;
 
 use Bankas\Db\App;
-use Bankas\Db\Messages as M;
+use App\Auth\Authorization as A;
 
 class HomeController {
 
   public function index() {
-    return App::view('home', ['title' => 'HOME', 'user' => 'Kristina']);
+    return App::view('home', ['title' => 'HOME', 'user' => A::authName()]);
   }
   // App::redirect('login');
 }

@@ -5,7 +5,8 @@
   "autoload": {
     "psr-4": {
       "Bankas\\Db\\": "src/app",
-      "App\\Db\\": "src/app/db"
+      "App\\Db\\": "src/app/db",
+      "App\\Auth\\": "src/app/auth"
     }
   },
   "authors": [

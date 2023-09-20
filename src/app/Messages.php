@@ -10,8 +10,8 @@ class Messages {
     unset($_SESSION['msg']);
   }
 
-  public static function add(string $text, string $type) : void {
-    $_SESSION['msg'][] = ['msg' => $text, 'type' => $type];
+  public static function add(string $type, string $text) : void {
+    $_SESSION['msg'][] = ['type' => $type, 'msg' => $text];
   }
 
   public static function get() : array {
