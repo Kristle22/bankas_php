@@ -4,6 +4,7 @@ namespace Bankas\Db;
 use Bankas\Db\Controllers\HomeController;
 use Bankas\Db\Controllers\AdminController;
 use Bankas\Db\Controllers\LoginController;
+use Bankas\Db\Validations;
 use Bankas\Db\Messages;
 
 class App {
@@ -17,6 +18,7 @@ class App {
     
     session_start();
     Messages::init();
+    Validations::init();
     ob_start();
 
     $uri = str_replace(BASE, '', $_SERVER['REQUEST_URI']);
@@ -53,14 +55,11 @@ class App {
     if ('GET' == $m && 2 == count(URI) && 'add' === URI[0]) {
       return (new AdminController)->addPage(URI[1]);
     }
-    if ('POST' == $m && 2 == count(URI) && 'add' === URI[0]) {
-      return (new AdminController)->updateAcc('add', URI[1]);
-    }
     if ('GET' == $m && 2 == count(URI) && 'charge' === URI[0]) {
       return (new AdminController)->chargePage(URI[1]);
     }
-    if ('POST' == $m && 2 == count(URI) && 'charge' === URI[0]) {
-      return (new AdminController)->updateAcc('charge', URI[1]);
+    if ('POST' == $m && 2 == count(URI) && in_array(URI[0], ['add', 'charge'])) {
+      return (new AdminController)->updateAcc(URI[0], URI[1]);
     }
     if ('POST' == $m && 2 == count(URI) && 'delete' === URI[0]) {
       return (new AdminController)->deleteAcc(URI[1]);

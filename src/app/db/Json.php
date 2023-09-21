@@ -65,6 +65,7 @@ class Json implements Database {
   foreach($this->data as $key => $item) {
     if ($item['id'] == $id) {
       unset($this->data[$key]);
+      $this->data = array_values($this->data);
     }
   }
  }

@@ -1,4 +1,5 @@
 <?php require __DIR__.'/top.php'; ?>
+<?php use Bankas\Db\Validations as V; ?>
 
 <h2 class="title">Naujos sąskaitos sukūrimas</h2>
 
@@ -11,21 +12,27 @@
     <label for="">Vardas</label>
 
     <input type="text" name="name">
-    <?php require __DIR__.'/errors.php'; ?>
+      <?php if(V::checkType('no_name', 'name_len')): ?>
+        <?php require __DIR__.'/errors.php'; ?>
+      <?php endif; ?>
 
   </div>
   <div>
     <label for="">Pavardė</label>
 
     <input type="text" name="surname">
-    <?php require __DIR__.'/errors.php'; ?>
+    <?php if(V::checkType('no_surname', 'surname_len')): ?>
+      <?php require __DIR__.'/errors.php'; ?>
+    <?php endif; ?>
 
   </div>
   <div>
     <label for="">Asmens kodas</label>
 
     <input type="text" name="id">
-    <?php require __DIR__.'/errors.php'; ?>
+    <?php if(V::checkType('no_id', 'id_len', 'id_unique')): ?>
+        <?php require __DIR__.'/errors.php'; ?>
+      <?php endif; ?>
     
   </div>
   <button type="submit" name="submit">Sukurti sąskaitą</button>
