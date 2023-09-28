@@ -8,8 +8,8 @@ use App\Auth\Authorization as A;
 
 class AdminController {
 
-  private static $db = 'App\\Db\\Json';
-  // private static $db = 'App\\Db\\Maria';
+  private $db = 'App\\Db\\Json';
+  // private $db = 'App\\Db\\Maria';
   private $file ='accounts';
   
   private static $nr;
@@ -17,7 +17,7 @@ class AdminController {
   private function getData($file) {
     $this->file = $file;
     
-    return self::$db == 'App\\Db\\Maria' ? self::$db::getMaria($file) : self::$db::getJson($file);
+    return $this->db::get($file);
   }
   
   private static function getNr() {
@@ -43,7 +43,7 @@ class AdminController {
   }
 
   public function createAcc() {
-    $new = ['id' => self::$db::nextId(), 'Nr' => $_POST['nr'], 'vardas' => $_POST['name'], 'pavarde' => $_POST['surname'], 'AK' => $_POST['id'], 'likutis' => 0];
+    $new = ['id' => $this->db::nextId(), 'Nr' => $_POST['nr'], 'vardas' => $_POST['name'], 'pavarde' => $_POST['surname'], 'AK' => $_POST['id'], 'likutis' => 0];
     
     V::createAcc();
     $this->getData($this->file)->create($new);

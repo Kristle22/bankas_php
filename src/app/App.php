@@ -12,8 +12,8 @@ class App {
   private static $html;
   
   public static function start() {
-    define('URL', 'http://localhost/bankas_react/public/');
-    define('BASE', '/bankas_react/public/');
+    define('URL', 'http://localhost/bankas_php/public/');
+    define('BASE', '/bankas_php/public/');
     define('DIR', __DIR__.'/../');
     
     session_start();

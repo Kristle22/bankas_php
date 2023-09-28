@@ -10,7 +10,7 @@ class Json implements Database {
   private static $obj;
   private $data, $file;
 
-  public static function getJson($file) {
+  public static function get($file) {
     return self::$obj ?? self::$obj = new self($file); 
   }
 
@@ -21,7 +21,7 @@ class Json implements Database {
     return ++$last_id;
   }
 
-  private function __construct($file) {
+  public function __construct($file) {
     $this->file = $file;
     if (!file_exists(DIR.'data/'.$file.'.json')) {
       file_put_contents(DIR.'data/'.$file.'.json', json_encode([]));

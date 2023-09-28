@@ -7,14 +7,14 @@ use App\Auth\Authorization as A;
 
 class LoginController {
 
-  private static $db = 'App\\Db\\Json';
-  // private static $db = 'App\\Db\\Maria';
+  private $db = 'App\\Db\\Json';
+  // private $db = 'App\\Db\\Maria';
   private $file ='users';
 
   private function getData($file) {
     $this->file = $file;
     
-    return self::$db == 'App\\Db\\Maria' ? self::$db::getMaria($file) : self::$db::getJson($file);
+    return $this->db::get($file);
   }
 
   public function showlogin() {
